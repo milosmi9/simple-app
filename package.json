@@ -4,12 +4,18 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/milosmi9/simple-app.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/milosmi9/simple-app/issues"
+  },
+  "homepage": "https://github.com/milosmi9/simple-app#readme",
   "dependencies": {
     "express": "^4.17.1"
   }
