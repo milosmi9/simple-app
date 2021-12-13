@@ -6,7 +6,7 @@ pipeline {
             nodejs('Node-17.2.0'){
                 sh 'npm install'
                 sh 'npm start'
-
             }
-    }
+        }    
+    }   
 }
