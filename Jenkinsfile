@@ -4,7 +4,7 @@ pipeline {
         stage ("run frontend"){
             steps{
                 echo "exec npm"
-                nodejs('Node-17.2.0'){
+                nodejs('Node-14.18.2){
                     sh 'npm install'
                     sh 'npm start'
                 }
