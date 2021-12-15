@@ -3,11 +3,7 @@ pipeline {
     stages {
         stage("dir"){
             steps {
-                sh "pwd"
-                dir('simple-app') {
-                    sh "pwd"
-                }
-                sh "pwd"
+                sh "cd simple-app"
             } 
         }
         stage("git"){
