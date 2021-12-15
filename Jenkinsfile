@@ -1,6 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage("git"){
+            steps{
+                sh 'git pull'
+            }
+
+        }
         stage("run frontend"){
             steps {
                 echo "exec npm"
