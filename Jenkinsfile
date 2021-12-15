@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage{
+        stage("dir"){
             steps {
                 sh "pwd"
                 dir('simple-app') {
