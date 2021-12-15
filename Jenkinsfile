@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage("dir"){
             steps {
-                sh "cd simple-app"
+                dir('/home/ec2-user/simple-app'){
+                    
+                }
             } 
         }
         stage("git"){
