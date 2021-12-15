@@ -4,7 +4,7 @@ pipeline {
         stage("run frontend"){
             steps {
                 echo "exec npm"
-                    sh 'pm2 restart'
+                    sh 'pm2 restart 0'
             }    
         }    
     }   
