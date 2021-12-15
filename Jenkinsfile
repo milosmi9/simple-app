@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo "exec npm"
                     sh 'npm install'
-                    sh 'pm2 restart 0'
+                    sh 'pm2 restart 1'
             }    
         }    
     }   
