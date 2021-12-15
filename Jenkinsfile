@@ -1,8 +1,18 @@
 pipeline {
     agent any
     stages {
+        stage{
+            steps {
+                sh "pwd"
+                dir('simple-app') {
+                    sh "pwd"
+                }
+                sh "pwd"
+            } 
+        }
         stage("git"){
             steps{
+
                 sh 'git pull origin main'
             }
 
