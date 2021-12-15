@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo "exec npm"
                     sh 'npm install'
-                    sh 'pm2 restart 0 --update-env'
+                    sh 'pm2 restart all'
             }    
         }    
     }   
