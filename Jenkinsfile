@@ -16,7 +16,7 @@ pipeline {
                 echo 'hello git'
                 sh 'git fetch'
                 sh 'git checkout main'
-                sh 'git pull'
+                sh 'git merge origin/main'
             }
 
         }
