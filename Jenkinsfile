@@ -18,6 +18,7 @@ pipeline {
                 sh 'git checkout main'
                 sh 'git diff'
                 sh 'git pull'
+                sh 'ls'
             }
 
         }
