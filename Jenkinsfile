@@ -3,13 +3,12 @@ pipeline {
     stages {
         stage("dir"){
             steps {
+                sh 'pwd'
                 dir('/home/ec2-user/simple-app'){
-
+                
                 }
             }
-            steps{
-                sh 'dir'
-            } 
+           
         }
 
         stage("git"){
