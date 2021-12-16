@@ -15,8 +15,7 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '33dcd16c-4498-4674-b52e-1356788c94d4', url: 'https://github.com/milosmi9/simple-app.git']]])
                 echo 'hello git'
                 sh 'git fetch'
-                sh 'git branch'
-                sh 'git branch --set-upstream-to origin main'
+                sh 'git checkout main'
                 sh 'git pull'
             }
 
