@@ -6,7 +6,7 @@ pipeline {
                 sh 'pwd'
                 dir('/home/ec2-user/simple-app'){
                 }
-                sh 'ls'
+                sh 'cat Jenkinsfile'
             }
         }
 
@@ -18,7 +18,7 @@ pipeline {
                 sh 'git checkout main'
                 sh 'git diff'
                 sh 'git pull'
-                sh 'ls'
+                sh 'cat Jenkinsfile'
             }
 
         }
