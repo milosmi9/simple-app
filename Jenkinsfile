@@ -17,6 +17,7 @@ pipeline {
                 sh 'git fetch'
                 sh 'git checkout main'
                 sh 'git diff'
+                sh 'cat Jenkinsfile'
                 sh 'git pull'
                 sh 'cat Jenkinsfile'
             }
