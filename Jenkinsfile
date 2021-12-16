@@ -28,6 +28,7 @@ pipeline {
             steps {
                 echo "exec npm"
                     sh 'npm install'
+                    sh 'pm2 restart all'
             }    
         }    
     }   
