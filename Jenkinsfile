@@ -5,10 +5,9 @@ pipeline {
             steps {
                 sh 'pwd'
                 dir('/home/ec2-user/simple-app'){
-                sh 'ls'
                 }
+                sh 'ls'
             }
-           
         }
 
         stage("git"){
