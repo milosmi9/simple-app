@@ -1,0 +1,54 @@
+stages:
+    - build
+    - deploy
+
+build project:
+    stage: build
+    rules:
+    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"' 
+    script:
+        - docker-compose up --build
+    artifacts:
+        paths:
+            - ./dist
+
+test build:
+    stage: test
+    image: alpine
+    only:
+        - merge_requests
+    script:
+        - cd dist
+        - grep -q "<title>my website</title>" index.html
+
+deploy development:
+    stage: deploy
+    only:
+        - development
+        - merge_requests
+    before_script:
+        - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$SSH_PRIVATE_KEY")
+        - mkdir -p ~/.ssh
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    script:
+        - apt-get update -qq && apt-get install -y -qq lftp
+        - lftp -c "some command here";
+
+deploy master:
+    stage: deploy
+    only:
+        - master
+        - merge_requests
+    before_script:
+        - 'which ssh-agent || ( apt-get install -qq openssh-client )'
+        - eval $(ssh-agent -s)
+        - ssh-add <(echo "$SSH_PRIVATE_KEY")
+        - mkdir -p ~/.ssh
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    script:
+        - apt-get update -qq && apt-get install -y -qq lftp
+        - lftp -c "some command here";
